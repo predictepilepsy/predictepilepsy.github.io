@@ -1,93 +1,166 @@
 <html>
-  <head>
-    <style type="text/css">
-      #asm_app {
-        margin_bottom: 5px;}
-        
-            /* Style the tab */
-            .tab {
-            overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
-            }
 
-            /* Style the buttons that are used to open the tab content */
-            .tab button {
-              background-color: inherit;
-              float: left;
-              border: none;
-              outline: none;
-              cursor: pointer;
-              padding: 14px 16px;
-              transition: 0.3s;
-            }
+<head>
+  <style type="text/css">
+    body {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #333;
+    }
 
-            /* Change background color of buttons on hover */
-            .tab button:hover {
-              background-color: #ddd;
-            }
+    #asm_app {
+      margin-bottom: 5px;
+    }
 
-            /* Create an active/current tablink class */
-            .tab button.active {
-              background-color: #ccc;
-            }
+    /* Style the tab */
+    .tab {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
 
-            /* Style the tab content */
-            .tabcontent {
-              display: none;
-              padding: 6px 12px;
-              border: 1px solid #ccc;
-              border-top: none;
-            }
-      }
-      #footer {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: darkgrey;
-        box-sizing: border-box;
-        margin: 0 0 0px;
-        padding: 5px;
-        text-align: center;
-        bottom: 0px;
-        width: 100%;
-      
-    </style>
+      display: flex;
+      justify-content: center;
+    }
+
+
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 16px 16px;
+      transition: 0.3s;
+      font-size: 13px;
+      color: #333;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #6658A4;
+      color: #fff;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #6658A4;
+      color: #fff;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+
+    #contact {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: darkgrey;
+      box-sizing: border-box;
+      margin: 0 0 0px;
+      padding: 0px;
+      text-align: center;
+      bottom: 0px;
+      width: 100%;
+    }
+
+    #registry_email {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: darkgrey;
+      box-sizing: border-box;
+      margin: 40 0 0px;
+      padding: 0px;
+      text-align: center;
+      bottom: 0px;
+      width: 100%;
+    }
+  </style>
   </head>
-  <body>
-    <div class="tab">
-    <button class="tablinks" onclick="openModel(model, 'asm_app_free')" >WAMS 1</button>
-    <button class="tablinks" onclick="openModel(model, 'asm_app')" >WAMS 2</button>
-    </div>
-  
-    
-    
-    <div id="asm_app"  class="tabcontent">
-      <iframe src="https://asmwithdrawal.shinyapps.io/outcome/" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-    
-    <div id="asm_app_free"  class="tabcontent">
-      <iframe src="https://asmwithdrawal.shinyapps.io/WAMS_2/" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-    
-    
-    <div id="footer">
-      © 2022 Made possible by
-      <div id="contact">
-        <p>
-          To get in touch,
-          <a href="https://github.com/predictepilepsy/predictepilepsy.github.io/issues/new">
-             open an issue on GitHub
-          </a>
-        </p>
-      </div>
-    </div>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6D4SDFTP5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-F6D4SDFTP5');
-    </script>
-  </body>
-</html>
+
+
+
+<body>
+<h1>Withdrawal of Antiseizure Medication after epilepsy Surgery (WAMS)</h1>
+
+<p>This clinical tool enables individualised risk assessment of postsurgical anti-seizure medication (ASM) withdrawal. It
+is meant to be used only by medical professionals to improve prediction of seizure outcome after ASM withdrawal
+following epilepsy surgery.</p>
+
+<p>Please select the clinical scenario:</p>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openModel(event, 'asm_app_free')" >Seizure free before ASM withdrawal</button>
+    <button class="tablinks" onclick="openModel(event, 'asm_app')">Auras before ASM withdrawal</button>
+  </div>
+
+
+
+  <div id="asm_app" class="tabcontent" >
+    <iframe src="https://asmwithdrawal.shinyapps.io/outcome/" width="100%" height="100%" frameborder="0"
+      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <div id="asm_app_free" class="tabcontent">
+    <iframe src="https://asmwithdrawal.shinyapps.io/WAMS_2/" width="100%" height="100%" frameborder="0"
+      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+  <div id="registry_email">
+    <p>Do you have similar data? 
+    <a class="button" href=mailto:carolina.ferreira@mssm.edu?cc=Marian.Galovic@uzh.ch&subject=Participate in the WAMS
+      Registry'>Become part of the WAMS Registry</a>
+    </p>
+  </div>
+  <div id="contact">
+      <p>
+        To get in touch,
+        <a href="https://github.com/predictepilepsy/predictepilepsy.github.io/issues/new">
+          open an issue on GitHub
+        </a>
+      </p>
+
+      <div id="footer">
+        © 2022
+      </div>
+  </div>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6D4SDFTP5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-F6D4SDFTP5');
+  </script>
+</body>
+
+
+
+  <script>
+    function openModel(event, app) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      // Get all elements with class="tablinks" and remove the class "active" 
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(app).style.display = "block";
+      event.currentTarget.className += " active";
+    }
+  </script>
+
+  </html>
